@@ -1,0 +1,50 @@
+T1{
+	color:white;
+	font-family: "Roboto";
+    font-weight: bold;
+	bottom: 10px;
+	left:5px;
+	font-size:20px;
+	position:relative;
+}
+
+.entete{
+	background:red;
+	height:98.2px;
+	width:100%;
+}
+
+.logo{
+	height:98.2px;
+	width:266px;
+}
+
+/* Vector */
+.maison{
+height:43px;
+width:43px;
+}
+
+.Accueil{
+	width:150px;
+    margin-top: -80px;
+    margin-left: 55%;
+}
+
+.Commandes{
+	width:160px;
+margin-top: -47px;
+    margin-left: 65%;
+}
+
+.Panier{
+	width:160px;
+margin-top: -48px;
+    margin-left: 77%;
+}
+
+.Profil{
+	width:160px;
+margin-top: -48px;
+    margin-left: 90%;
+}
