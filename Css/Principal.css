@@ -1,0 +1,53 @@
+.Recherche{
+	background-color:#CE1628;
+	width:934px;
+	height:279px;
+	    position: absolute;
+    top: 250px;
+    left: 375px;
+	text-align: center;
+}
+
+.BarreRecherche{
+    width: 50%;
+    height: 50px;
+    margin-top: 90px;
+    margin-right: 144px;
+    border-radius: 15px;
+    border: 2px solid #FAA61A;
+	
+}
+.BarreRecherche:focus{
+    outline: none;
+}
+
+.BouttonRecherche{
+    background-color: #FAA61A;
+    width: 20%;
+    height: 56px;
+    border-radius: 15px;
+    border: none;
+    position: absolute;
+    bottom: 74px;
+    left: 590px;
+}
+
+.BlocRestaurant{	
+	height:311px;
+	width:979px;
+	margin-right: auto;
+	margin-left: auto;
+	border: 1px solid gray;
+	box-shadow: 4px 4px 4px gray ;
+	margin-top:160px;
+}
+
+T2{
+	margin-top:50px;
+	font-size: 37px;
+	color: white;
+	width:711px;
+	height:49px;
+	position: relative;
+    top: 75px;
+}
