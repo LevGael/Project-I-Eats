@@ -1,10 +1,11 @@
 <!doctype html>
 <html>
 <head>
-<link rel="stylesheet" href="../Css/Entete.css" type="text/css">
+<link rel="stylesheet" href="../Css/Entete2.css" type="text/css">
 <div class="entete" onclick="entete()">
 <img class="logo" src="../Images/logo.png">
 <a href="Principal.php" class="lien" style="text-decoration:none;">
+<script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
 <div class="Accueil" >
 <span class="iconify" data-icon="ant-design:home-filled" style="color: white; height:43px;width:43px;"></span>
 <T1>Accueil</T1>

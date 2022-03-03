@@ -36,13 +36,13 @@ width:43px;
 }
 
 .Commandes{
-	width:160px;
+width:180px;
 margin-top: -47px;
     margin-left: 65%;
 }
 
 .Panier{
-	width:160px;
+	width:180px;
 margin-top: -48px;
     margin-left: 77%;
 }
@@ -55,6 +55,7 @@ margin-top: -48px;
 
 a{
 text-decoration:none;	
+width:200px;
 }
 
 .Backroundimage{
