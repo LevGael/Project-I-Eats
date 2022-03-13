@@ -28,4 +28,4 @@ if (isset($_SESSION["id_restau_user"], $_SESSION['id_user'])) {
 
 
 echo  htmlentities($message);
-echo "<button> <a href='../Pages/Accueil-restaurateur.php'>OK</a> </button>";
+echo "<a href='../Pages/Accueil-restaurateur.php'><button> OK </button></a>";

@@ -45,13 +45,13 @@
 
                 switch ($utilisateur['Rôle']) {
                     case "Consommateur":
-                        header("location:Pages/Principal.php");
+                        header("location:./Principal.php");
                         break;
                     case "Restaurateur":
                         header("location:./Creation-boutique.php");
                         break;
                     case  "Livreur":
-                        header("location:Pages/Principal.php");
+                        header("location:./Principal.php");
                         break;
                 }
 
