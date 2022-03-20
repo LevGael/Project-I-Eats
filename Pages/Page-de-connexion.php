@@ -27,15 +27,16 @@ $message="";
     if (isset($_GET["login"]) && isset($_GET["passwd"]))
     {
 		foreach ($utilisateurs as $utilisateur ) {
-        if ($_GET["login"]==$utilisateur['Mail'] && $_GET["passwd"]==$utilisateur['Mdp'])
+        if ($_GET["login"]==$utilisateur['Mail'] && password_verify($_GET["passwd"], $utilisateur['Mdp']))
         {
+			session_start();
             $_SESSION["login"] = $utilisateur['Nom'];
             $_SESSION["droits"] = $utilisateur['Rôle'];
+			$_SESSION["ID"] = $utilisateur['IdUtilisateur'];
             header("location:Pages/Principal.php");
             exit();
         }
 		}		
-		    
             $message = "Erreur, l'email ou le mot de passe est inccorect";
     } 
 
