@@ -40,7 +40,7 @@ background-color: #CE1628;
     margin-right: 144px;
     border-radius: 15px;
     border: 2px solid #FAA61A;
-	
+	font-size: 25px;
 	
 }
 .BarreRecherche:focus{
@@ -54,7 +54,7 @@ background-color: #CE1628;
     border-radius: 15px;
     border: none;
     position: absolute;
-    bottom: 72px;
+    bottom: 73px;
     left: 620px;
 	font-family: 'Roboto', sans-serif;
 	font-weight: bold;
@@ -100,7 +100,7 @@ background-color: #CE1628;
     border: none;
     position: relative;
     top: 135px;
-        left: 380px;
+    left: 370px;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-size: 24px;
@@ -127,7 +127,9 @@ background-color: #CE1628;
 	margin-top: -180px;
 	margin-bottom: 210px;
 	border: 1px solid gray;
-	box-shadow: 4px 4px 4px gray ;
+	box-shadow: 4px 4px 4px gray ;    
+	margin-top: -340px;
+    margin-bottom: 360px;
 }
 
 .BlocPanier{	
@@ -135,8 +137,8 @@ background-color: #CE1628;
     width: 934px;
     margin-right: auto;
     margin-left: auto;
-    margin-top: -242px;
-    margin-bottom: 241px;
+    margin-top: -356px;
+    margin-bottom: 355px;
     border: 1px solid gray;
     box-shadow: 4px 4px 4px grey;
 }
@@ -186,6 +188,31 @@ position: relative;
 	height:200px;
 }
 
+.PlusMoins{
+      background-color: #FAA61A;
+    width: 47px;
+    height: 47px;
+    border-radius: 50px;
+    border: none;
+    position: relative;
+    bottom: 253px;
+    left: 430px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+    margin-right: 50px;
+}
+
+.quantite{
+     position: relative;
+    bottom: 253px;
+    left: 406px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+}
+
 T2{
 	margin-top:50px;
 	font-size: 37px;
@@ -232,13 +259,13 @@ T6{
 }
 
 T7{
-color:#CE1628;
-font-size:30px;	
-font-family: 'Roboto', sans-serif;
+color: #CE1628;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
-	position: relative;
-    top: 85px;
-	right:180px;
+    position: relative;
+    bottom: 310px;
+    left: 475px;
 }
 T8{
 	color:#CE1628;

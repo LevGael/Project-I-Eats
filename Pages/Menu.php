@@ -1,7 +1,8 @@
+<?php session_start() ?>
 <!doctype html>
 <html>
 <head>
-<link rel="stylesheet" href="../Css/Principal3.css" type="text/css">
+<link rel="stylesheet" href="../Css/Principal4.css" type="text/css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -19,10 +20,44 @@ try{
 	die();
 }
 
+
+
 $sqlutil = "SELECT * FROM plat WHERE IdRestaurant = '".$restaurant."'";
 $prepare = $dbh->prepare($sqlutil);
 $prepare->execute();
 $plats = $prepare->fetchAll();
+
+	  if(array_key_exists('quantite', $_POST)) {
+            AjouterPanier();
+        } else {
+			
+		}	
+		
+		function AjouterPanier(){
+$Date = date(DATE_ATOM);
+$status = "En livraison";
+$prix = $_POST["quantite"] * $_POST["Prix"] ;
+$utilisateur = $_SESSION["ID"];
+$quantite = $_POST["quantite"];
+try{
+$dbh = new PDO('mysql:host=localhost;dbname=i-eats;charset=utf8' , LOGIN, MDP);
+} catch (PDOException $e) {
+	print("Erreur : " . $e->getMessage() . "<br/>");
+	die();
+}
+	$sql = "INSERT into commande(Date_Commande,StatutCommande,Prix_total,IdUtilisateur,quantite) VALUES ('$Date','$status','$prix','$utilisateur','$quantite') ";
+	$prepare = $dbh->prepare($sql);
+	
+    if ($prepare->execute()) {
+		?>
+        <script> 
+		document.getElementById("Estajoute").removeAttribute("hidden"); 
+		</script>
+		<?php
+} else {
+  echo "Erreur, Impossible de créer l'enregistrement";
+}
+}
 ?>
 </head>
 <body>
@@ -32,12 +67,13 @@ $plats = $prepare->fetchAll();
 <T6>Plats à la carte</T6>
 <div class="BarreJaune"></div>
 </div>
+<label id="Estajoute" hidden>Votre commande a été ajouté au pannier</label>
 <?php
 $value= 1;
 foreach ($plats as $plat){	
 ?>
 <div class="BlocPlat" name="BlocPlat" id="test"> 
-<form name="RestaurantPlats" action="../Contenu/Action.php" method="post">
+<form name="RestaurantPlats" action="Menu.php" method="post">
 <img class="ImagePlat" src="../Images/Restaurant1.png"/> 
 <div name="PlatAAjouter" class="Informations2">
 
@@ -48,6 +84,7 @@ echo "<T5 name='TypePlat'>",$plat['Type']," - Taille ",$plat['Taille'],"</T5>";
 ?>
 <input type="hidden" name="quantite" id="quantiteplat" value="1" />
 <input type="hidden" name="Prix" value="<?php echo $plat['Prix'] ?>" />
+<input type="hidden" name="IdRestaurant" value="<?php echo $_POST['IdRestaurant'] ?>" />
 </div>
 <?php
 echo "<T7 name='Prix'>",$plat['Prix']," €</T7>";

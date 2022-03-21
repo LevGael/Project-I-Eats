@@ -14,13 +14,14 @@ background-color: #CE1628;
 }
 
 .Barre{
-	background-color:#CE1628;
-	width:934px;
-	height:120px;
-	    position: absolute;
-        top: 355px;
-    left: 375px;
-	text-align: center;
+background-color: #CE1628;
+    width: 934px;
+    height: 120px;
+    position: relative;
+    bottom: 355px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 .BarreJaune{
@@ -99,7 +100,7 @@ background-color: #CE1628;
     border: none;
     position: relative;
     top: 135px;
-    left: 230px;
+    left: 370px;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-size: 24px;
