@@ -16,6 +16,26 @@ T1{
 	position:relative;
 }
 
+Tmenu1{
+	color:white;
+	font-family: "Roboto";
+    font-weight: bold;
+	left:10px;
+	    top: 10px;
+	font-size:20px;
+	position:relative;
+}
+
+Tmenu2{
+	color:red;
+	font-family: "Roboto";
+    font-weight: bold;
+	top: 30px;
+	left:5px;
+	font-size:25px;
+	position:relative;
+}
+
 .entete{
 	background:#CE1628;
 	height:98.2px;
@@ -75,4 +95,13 @@ position: relative;
 
 .menubutton{
 	margin-left: 400px;
+}
+
+.blocProfil{
+    background-color: #FAA61A;
+    height: 100px;
+    width: 180px;
+    position: relative;
+    left: 1040px;
+    align-items: center;
 }

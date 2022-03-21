@@ -25,13 +25,33 @@
 </a>
 </div>
 <div class="Profil">
-<a href="Profil.php" class="lien">
-<span class="iconify" data-icon="ic:sharp-account-circle" style="color: white; height:43px;width:43px;"></span>
-</a>
+<span class="iconify" data-icon="ic:sharp-account-circle" onclick="profil()" style="color: white; height:43px;width:43px;"></span>
+</div>
+<div  id="blockDuProfil" class="blocProfil">
+<Tmenu1> Bienvenue <?php echo ($_SESSION["login"]) ?> </Tmenu1>
+<Tmenu2 onclick="deco()">Se déconnecter</Tmenu2>
 </div>
 </div>
 </div>
 </head>
 </html>
 <script>
+var nb=1;
+	document.getElementById("blockDuProfil").style.display = "none";
+	
+
+function profil(){
+	if(nb % 2 != 0){
+		document.getElementById("blockDuProfil").style.display = "block";
+	} else {
+	document.getElementById("blockDuProfil").style.display = "none";
+	}
+	nb=nb+1;
+}
+
+function deco(){
+        document.location = '../Contenu/destroy_session.php';
+}
+
+
 </script>
