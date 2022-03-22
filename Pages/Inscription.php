@@ -1,7 +1,6 @@
 <!doctype html>
 <html>
 <link rel="stylesheet" href="../Css/Connexion.css" type="text/css">
-<link rel="stylesheet" href="../Css/Page.css" type="text/css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

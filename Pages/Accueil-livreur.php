@@ -21,28 +21,12 @@ if (isset($_SESSION['id_restau_user'])) {
     $message = "Va t'authentifier petit bandit !";
 }
 ?>
-<?php include "../Contenu/Entete-restaurateur.php" ?>
+<?php include "../Contenu/Entete-livreur.php" ?>
 <div>
 
     <div class="banner">
         <div class="container-fluid p-0 background-img">
             <img width="100%" height="300px" src="../Images/Backround1.png" />
-        </div>
-        <div class="container-fluid infos_restau">
-
-            <div class="row mt-5">
-                <div class="col-4"></div>
-                <div class="col-4">
-
-                    <?php
-                    echo '<span class="title-yellow">' . htmlentities($restaurant['nom']) . '</span>'  . "<br/>";
-                    echo htmlentities($restaurant['adresse']) . ", " . htmlentities($restaurant['ville']) . "<br/>";
-                    echo "Horaire : " . htmlentities($restaurant['heure_ouverture']) . " - " . htmlentities($restaurant['heure_fermeture']) . "<br/>";
-                    ?>
-                </div>
-                <div class="col-4"></div>
-            </div>
-
         </div>
     </div>
 
@@ -52,16 +36,13 @@ if (isset($_SESSION['id_restau_user'])) {
             <div class="col-8">
                 <div class=" band-red">
                     <br> <br>
-                    <T6>Plats à la carte</T6>
-                    <div class="BarreJaune"></div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-2"></div>
-                    <div class="col-8" style="text-align: center;">
-                        <a href="./Ajout-repas.php"><button class="btn btn-warning btn-lg button-yellow">Ajouter un plat</button></a>
+                    <T6>Entre ta ville et sélectionne une commande</T6>
+                    <br>
+                    <div class="m-4">
+                        <input class="BarreRecherche" type="text">
+                        <button class="BouttonRecherche">Rechercher</button>
                     </div>
-                    <div class="col-2"></div>
+                    <br>
                 </div>
                 <br>
                 <div id="contenu">
@@ -85,8 +66,7 @@ if (isset($_SESSION['id_restau_user'])) {
                                         <T7><?php echo htmlentities($plat['prix'])  . "€" ?></T7> <br>
                                     </div>
                                     <br>
-                                    <input type="button" class="ButtonPanier" value="Modifier" />
-                                    <input type="button" class="ButtonRestaurant" onclick="suppr_plat(<?php echo htmlentities($plat['id_plat'])   ?>)" value="Supprimer" />
+                                    <input type="button" class="ButtonPanier" value="Accepter la livraison" />
                                     <br> <br>
                                 </div>
                             </div>

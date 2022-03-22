@@ -1,74 +1,73 @@
-body{
-margin:0;	
+body {
+  margin: 0;
 }
 
-html{
-	overflow-x: hidden;
+html {
+  overflow-x: hidden;
 }
 
-T1{
-	color:white;
-	font-family: "Roboto";
-    font-weight: bold;
-	bottom: 10px;
-	left:5px;
-	font-size:20px;
-	position:relative;
+T1 {
+  color: white;
+  font-family: "Roboto";
+  font-weight: bold;
+
+  font-size: 18px;
+  position: relative;
 }
 
-.entete{
-	background:#CE1628;
-	height:98.2px;
-	width:100%;
+.entete {
+  background: #ce1628;
+  height: 80px;
+  width: 100%;
 }
 
-.logo{
-	height:98.2px;
-	width:266px;
+.logo {
+  height: 80px;
+  width: 220px;
 }
 
-/* Vector */
-.maison{
-height:43px;
-width:43px;
+/* Vector 
+.maison {
+  height: 43px;
+  width: 43px;
 }
 
-.Accueil{
-	width:150px;
-    margin-top: -80px;
-    margin-left: 55%;
+.Accueil {
+  width: 150px;
+  margin-top: -80px;
+  margin-left: 55%;
 }
 
-.Commandes{
-width:180px;
-margin-top: -47px;
-    margin-left: 65%;
+.Commandes {
+  width: 180px;
+  margin-top: -47px;
+  margin-left: 65%;
 }
 
-.Panier{
-	width:180px;
-margin-top: -48px;
-    margin-left: 77%;
+.Panier {
+  width: 180px;
+  margin-top: -48px;
+  margin-left: 77%;
 }
 
-.Profil{
-	width:160px;
-margin-top: -48px;
-    margin-left: 90%;
+.Profil {
+  width: 160px;
+  margin-top: -48px;
+  margin-left: 90%;
+}
+*/
+a {
+  text-decoration: none;
+  width: 200px;
 }
 
-a{
-text-decoration:none;	
-width:200px;
+.Backroundimage {
+  width: 100%;
 }
 
-.Backroundimage{
-	width:100%;
-}
-
-.Backroundimage2{
-	width:100%;
-position: relative;
-    bottom: 305px;
-    height: 310px;
+.Backroundimage2 {
+  width: 100%;
+  position: relative;
+  bottom: 305px;
+  height: 310px;
 }

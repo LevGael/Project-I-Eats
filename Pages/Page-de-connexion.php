@@ -48,7 +48,10 @@
                         header("location:./Principal.php");
                         break;
                     case "Restaurateur":
-                        header("location:./Creation-boutique.php");
+                        if (!isset($_SESSION["id_restau_user"]))
+                            header("location:./Creation-boutique.php");
+                        else
+                            header("location:./Accueil-restaurateur.php");
                         break;
                     case  "Livreur":
                         header("location:./Principal.php");
