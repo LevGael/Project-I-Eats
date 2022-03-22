@@ -33,7 +33,30 @@ $message="";
             $_SESSION["login"] = $utilisateur['Nom'];
             $_SESSION["droits"] = $utilisateur['Rôle'];
 			$_SESSION["ID"] = $utilisateur['IdUtilisateur'];
-            header("location:Pages/Principal.php");
+			                $_SESSION["id_user"] = $utilisateur['IdUtilisateur'];
+                $_SESSION["nom_user"] = $utilisateur['Nom'];
+                $_SESSION["prenom_user"] = $utilisateur['Prénom'];
+                $_SESSION["mail_user"] = $utilisateur['Mail'];
+                $_SESSION["role_user"] = $utilisateur['Rôle'];
+                $_SESSION["adresse_user"] = $utilisateur['Adresse'];
+                $_SESSION["ville_user"] = $utilisateur['Ville'];
+                $_SESSION["id_restau_user"] = $utilisateur['IdRestaurant'];
+
+                switch ($utilisateur['Rôle']) {
+                    case "Consommateur":
+                        header("location:./Pages/Principal.php");
+                        break;
+                    case "Restaurateur":
+                        if (!isset($_SESSION["id_restau_user"]))
+                            header("location:./Pages/Creation-boutique.php");
+                        else
+                            header("location:./Accueil-restaurateur.php");
+                        break;
+                    case  "Livreur":
+                        header("location:./Principal.php");
+                        break;
+                }
+
             exit();
         }
 		}		

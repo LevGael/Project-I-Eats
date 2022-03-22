@@ -19,9 +19,8 @@ try{
 	die();
 }
 
-
-$sqlutil = "SELECT * FROM panier pa inner Join commande co on co.IdCommande = pa.IdCommande 
-inner Join association asso on asso.IdCommande = co.IdCommande inner join plat pl on pl.IdPlat = asso.IdPlat where IdUtilisateur = '".$_SESSION["ID"]."'";
+$sqlutil = "SELECT * FROM panier pa inner Join commande co on co.IdCommande = pa.IdCommande
+inner Join association asso on asso.IdCommande = co.IdCommande inner join plat pl on pl.id_plat = asso.IdPlat where IdUtilisateur = '".$_SESSION["ID"]."'";
 $prepare = $dbh->prepare($sqlutil);
 $prepare->execute();
 $plats = $prepare->fetchAll();
@@ -68,7 +67,7 @@ $dbh = new PDO('mysql:host=localhost;dbname=i-eats;charset=utf8' , LOGIN, MDP);
 	print("Erreur : " . $e->getMessage() . "<br/>");
 	die();
 }
-	$sql = "Update panier set Statut='Effectué' where IdCommande = '".$idCommande."'";
+	$sql = "Update panier set StatutPanier='Effectué' where IdCommande = '".$idCommande."'";
 	$prepare = $dbh->prepare($sql);
 	
     if ($prepare->execute()) {
@@ -90,14 +89,14 @@ $dbh = new PDO('mysql:host=localhost;dbname=i-eats;charset=utf8' , LOGIN, MDP);
 </div>
 <?php
 foreach ($plats as $plat ){
-	if($plat["Statut"] == "En cours"){
+	if($plat["StatutPanier"] == "En cours"){
 	$total = $total + $plat['Prix_total'];
 ?>
 <div class="BlocPanier"> 
 <img class="ImagePanier" src="../Images/Restaurant1.png"/> 
 <div class="Informations2">
 <?php
-echo "<T8>",$plat['Nom'],"<br/></T8>";
+echo "<T8>",$plat['nom'],"<br/></T8>";
 echo "<T9> Quantité : ",$plat['quantite'],"<br/></T9>";
 echo "<T10>",$plat['Prix_total']," €</T10>";
 ?>

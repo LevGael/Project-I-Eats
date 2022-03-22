@@ -20,8 +20,8 @@ try{
 }
 
 
-$sqlutil = "SELECT * FROM panier pa inner Join commande co on co.IdCommande = pa.IdCommande 
-inner Join association asso on asso.IdCommande = co.IdCommande inner join plat pl on pl.IdPlat = asso.IdPlat where IdUtilisateur = '".$_SESSION["ID"]."'";
+$sqlutil = "SELECT * FROM panier pa inner Join commande co on co.IdCommande = pa.IdCommande
+inner Join association asso on asso.IdCommande = co.IdCommande inner join plat pl on pl.id_plat = asso.IdPlat where IdUtilisateur = '".$_SESSION["ID"]."'";
 $prepare = $dbh->prepare($sqlutil);
 $prepare->execute();
 $plats = $prepare->fetchAll();
@@ -41,8 +41,8 @@ foreach ($plats as $plat){
 <img class="ImagePanier" src="../Images/Restaurant1.png"/> 
 <div class="Informations2">
 <?php
-echo "<T13>",$plat['Nom'],"<br/></T13>";
-echo "<T15>Statut : ",$plat['StatutCommande'],"<br/></T15>";
+echo "<T13>",$plat['nom'],"<br/></T13>";
+echo "<T15>Statut : ",$plat['Statut'],"<br/></T15>";
 echo "<T14>",$plat['Prix_total']," €</T14>";
 ?>
 

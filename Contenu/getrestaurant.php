@@ -25,9 +25,9 @@ foreach ($restaurants as $rests){
 <div class="Informations">
 <input type="hidden" name="IdRestaurant" value="<?php echo $rests['IdRestaurant'] ?>">
 <?php
-echo "<T3>",$rests['Nom'],"<br/></T3>";
-echo "<T4>",$rests['Adresse'],"<br/></T4>";
-echo "<T5>",$rests['Heure Ouverture']," - ",$rests['Heure Fermeture'],"</T5>";
+echo "<T3>",$rests['nom'],"<br/></T3>";
+echo "<T4>",$rests['adresse'],"<br/></T4>";
+echo "<T5>",$rests['heure_ouverture']," - ",$rests['heure_fermeture'],"</T5>";
 ?>
 <input type="submit" class="ButtonRestaurant" value="Consulter le menu" onclick="" />
 </div>

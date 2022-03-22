@@ -2,7 +2,7 @@
 <!doctype html>
 <html>
 <head>
-<link rel="stylesheet" href="../Css/Principal4.css" type="text/css">
+<link rel="stylesheet" href="../Css/Principal3.css" type="text/css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -21,8 +21,7 @@ try{
 }
 
 
-
-$sqlutil = "SELECT * FROM plat WHERE IdRestaurant = '".$restaurant."'";
+$sqlutil = "SELECT * FROM plat WHERE id_restau = '".$restaurant."'";
 $prepare = $dbh->prepare($sqlutil);
 $prepare->execute();
 $plats = $prepare->fetchAll();
@@ -45,7 +44,7 @@ $dbh = new PDO('mysql:host=localhost;dbname=i-eats;charset=utf8' , LOGIN, MDP);
 	print("Erreur : " . $e->getMessage() . "<br/>");
 	die();
 }
-	$sql = "INSERT into commande(Date_Commande,StatutCommande,Prix_total,IdUtilisateur,quantite) VALUES ('$Date','$status','$prix','$utilisateur','$quantite') ";
+	$sql = "INSERT into commande(Date_Commande,Statut,Prix_total,IdUtilisateur) VALUES ('$Date','$status','$prix','$utilisateur') ";
 	$prepare = $dbh->prepare($sql);
 	
     if ($prepare->execute()) {
@@ -78,16 +77,16 @@ foreach ($plats as $plat){
 <div name="PlatAAjouter" class="Informations2">
 
 <?php
-echo "<T3 name='NomPlat'>",$plat['Nom'],"<br/></T3>";
-echo "<T4 name='DescriptionPlat'>",$plat['Description'],"<br/></T4>";
-echo "<T5 name='TypePlat'>",$plat['Type']," - Taille ",$plat['Taille'],"</T5>";
+echo "<T3 name='NomPlat'>",$plat['nom'],"<br/></T3>";
+echo "<T4 name='DescriptionPlat'>",$plat['description'],"<br/></T4>";
+echo "<T5 name='TypePlat'>",$plat['categorie']," - Taille ",$plat['taille'],"</T5>";
 ?>
 <input type="hidden" name="quantite" id="quantiteplat" value="1" />
-<input type="hidden" name="Prix" value="<?php echo $plat['Prix'] ?>" />
+<input type="hidden" name="Prix" value="<?php echo $plat['prix'] ?>" />
 <input type="hidden" name="IdRestaurant" value="<?php echo $_POST['IdRestaurant'] ?>" />
 </div>
 <?php
-echo "<T7 name='Prix'>",$plat['Prix']," €</T7>";
+echo "<T7 name='Prix'>",$plat['prix']," €</T7>";
 ?>
 <input type="button" class="PlusMoins" onclick="Moins(<?php echo $value ?>)" value="-"/><label class="quantite" name="quantite"  id="quantite<?php echo($value)?>">1</label><input type="button" class="PlusMoins" onclick="Plus(<?php echo $value ?>)" value="+"/>
 <input type="submit" class="ButtonPanier" value="Ajouter au Panier"/>

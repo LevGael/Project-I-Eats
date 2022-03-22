@@ -1,0 +1,258 @@
+html {
+  overflow-x: hidden;
+  font-family: "Roboto", sans-serif;
+}
+.banner {
+  position: relative;
+}
+.background-img {
+  position: relative;
+}
+.title-yellow {
+  color: #faa61a;
+  font-weight: bold;
+  font-size: 34px;
+}
+.corps {
+  position: relative;
+  z-index: 2;
+  top: -50px;
+  font-size: 18px;
+}
+.corps-yellow {
+  border: 1px solid #faa81a93;
+}
+.input-yellow {
+  border: 1px solid #faa61a;
+  border-radius: 10px;
+  height: 40px;
+  margin-top: 5px;
+}
+.textarea-yellow {
+  border: 1px solid #faa61a;
+  border-radius: 10px;
+  height: 150px;
+  margin-top: 5px;
+}
+.band-red {
+  background-color: #ce1628;
+  color: #ffffff;
+  font-weight: bolder;
+  width: 100%;
+
+  height: 150px;
+  text-align: center;
+}
+.infos_restau {
+  font-size: 18px;
+  text-align: center;
+  height: 100%;
+  position: absolute;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.747);
+
+  top: -2px;
+}
+.list_card {
+  border: 1px solid;
+}
+.button-yellow {
+  background-color: #faa61a;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  border: 0px;
+  border-radius: 25px;
+  width: 200px;
+  height: 55px;
+}
+.button-red {
+  background-color: #ce1628;
+  border-radius: 3px;
+  border: 0px;
+  color: white;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  width: 200px;
+  height: 50px;
+}
+.Recherche {
+  background-color: #ce1628;
+  width: 934px;
+  height: 279px;
+  position: absolute;
+  top: 250px;
+  left: 375px;
+  text-align: center;
+}
+
+.Barre {
+  background-color: #ce1628;
+  width: 934px;
+  height: 120px;
+  position: absolute;
+  top: 355px;
+  left: 375px;
+  text-align: center;
+}
+
+.BarreJaune {
+  background-color: #faa61a;
+  width: 140px;
+  height: 12px;
+  position: relative;
+  top: 10px;
+  left: 200px;
+}
+
+.BarreRecherche {
+  width: 56%;
+  height: 50px;
+  margin-top: 90px;
+  margin-right: 144px;
+  border-radius: 15px;
+  border: 2px solid #faa61a;
+}
+.BarreRecherche:focus {
+  outline: none;
+}
+
+.BouttonRecherche {
+  background-color: #faa61a;
+  width: 20%;
+  height: 56px;
+  border-radius: 15px;
+  border: none;
+  position: absolute;
+  bottom: 72px;
+  left: 620px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: white;
+}
+
+.ButtonRestaurant {
+  background-color: #faa61a;
+  width: 25%;
+  height: 49px;
+  border-radius: 5px;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: white;
+}
+
+.ButtonPanier {
+  background-color: #ce1628;
+  width: 25%;
+  height: 49px;
+  border-radius: 5px;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: white;
+}
+
+.BlocRestaurant {
+  height: 311px;
+  width: 979px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 1px solid gray;
+  box-shadow: 4px 4px 4px gray;
+  margin-top: 25px;
+}
+
+.BlocPlat {
+  height: 381px;
+  width: 934px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 50px;
+  border: 1px solid gray;
+  box-shadow: 4px 4px 4px gray;
+}
+
+.espace {
+  margin-top: 175px;
+}
+
+.espace2 {
+  margin-top: 100px;
+}
+
+.ImageRestaurant {
+  width: 246.58px;
+  height: 250px;
+  margin-left: 150px;
+  margin-top: 25px;
+}
+
+.ImagePlat {
+  width: 246.58px;
+  height: 250px;
+  margin-left: 75px;
+  margin-top: 68px;
+}
+
+.Informations {
+  position: relative;
+  left: 500px;
+  bottom: 230px;
+  font-family: "Roboto", sans-serif;
+  height: 200px;
+}
+
+.Informations2 {
+  position: relative;
+  left: 475px;
+  bottom: 250px;
+  font-family: "Roboto", sans-serif;
+  height: 200px;
+}
+
+T2 {
+  margin-top: 50px;
+  font-size: 37px;
+  color: white;
+  width: 711px;
+  height: 49px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  position: relative;
+  top: 75px;
+}
+
+T3 {
+  color: #ce1628;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+
+T4 {
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+}
+
+T5 {
+  top: 30px;
+  position: relative;
+  font-size: 24px;
+  font-family: "Roboto", sans-serif;
+}
+
+T6 {
+  margin-top: 50px;
+  font-size: 24px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+
+T7 {
+  color: #ce1628;
+  font-size: 20px;
+  font-weight: bold;
+}
