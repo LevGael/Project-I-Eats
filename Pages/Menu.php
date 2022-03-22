@@ -2,7 +2,7 @@
 <!doctype html>
 <html>
 <head>
-<link rel="stylesheet" href="../Css/Principal3.css" type="text/css">
+<link rel="stylesheet" href="../Css/Principal5.css" type="text/css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -38,6 +38,7 @@ $status = "En livraison";
 $prix = $_POST["quantite"] * $_POST["Prix"] ;
 $utilisateur = $_SESSION["ID"];
 $quantite = $_POST["quantite"];
+$plat = $_POST["platid"];
 try{
 $dbh = new PDO('mysql:host=localhost;dbname=i-eats;charset=utf8' , LOGIN, MDP);
 } catch (PDOException $e) {
@@ -45,6 +46,37 @@ $dbh = new PDO('mysql:host=localhost;dbname=i-eats;charset=utf8' , LOGIN, MDP);
 	die();
 }
 	$sql = "INSERT into commande(Date_Commande,Statut,Prix_total,IdUtilisateur) VALUES ('$Date','$status','$prix','$utilisateur') ";
+	$prepare = $dbh->prepare($sql);
+	
+    if ($prepare->execute()) {
+		?>
+        <script> 
+		document.getElementById("Estajoute").removeAttribute("hidden"); 
+		</script>
+		<?php
+} else {
+  echo "Erreur, Impossible de créer l'enregistrement";
+}
+$sqlutil = "SELECT IdCommande FROM commande ORDER BY IdCommande DESC";
+$prepare = $dbh->prepare($sqlutil);
+$prepare->execute();
+$plats = $prepare->fetchAll();
+$IdCommande = $plats[0]['IdCommande'];
+
+	$sql = "INSERT into panier(Prix,StatutPanier,idCommande,quantite) VALUES ('$prix','En cours','$IdCommande','$quantite') ";
+	$prepare = $dbh->prepare($sql);
+	
+    if ($prepare->execute()) {
+		?>
+        <script> 
+		document.getElementById("Estajoute").removeAttribute("hidden"); 
+		</script>
+		<?php
+} else {
+  echo "Erreur, Impossible de créer l'enregistrement";
+}
+
+	$sql = "INSERT into association(IdPlat,idCommande) VALUES ('$plat','$IdCommande') ";
 	$prepare = $dbh->prepare($sql);
 	
     if ($prepare->execute()) {
@@ -81,14 +113,15 @@ echo "<T3 name='NomPlat'>",$plat['nom'],"<br/></T3>";
 echo "<T4 name='DescriptionPlat'>",$plat['description'],"<br/></T4>";
 echo "<T5 name='TypePlat'>",$plat['categorie']," - Taille ",$plat['taille'],"</T5>";
 ?>
-<input type="hidden" name="quantite" id="quantiteplat" value="1" />
+<input type="hidden" name="platid" id="plat" value="<?php echo $plat['id_plat'] ?>" />
+<input type="hidden" name="quantite" id="quantiteplat<?php echo($value)?>" value=1 />
 <input type="hidden" name="Prix" value="<?php echo $plat['prix'] ?>" />
 <input type="hidden" name="IdRestaurant" value="<?php echo $_POST['IdRestaurant'] ?>" />
 </div>
 <?php
 echo "<T7 name='Prix'>",$plat['prix']," €</T7>";
 ?>
-<input type="button" class="PlusMoins" onclick="Moins(<?php echo $value ?>)" value="-"/><label class="quantite" name="quantite"  id="quantite<?php echo($value)?>">1</label><input type="button" class="PlusMoins" onclick="Plus(<?php echo $value ?>)" value="+"/>
+<input type="button" class="PlusMoins" onclick="Moins(<?php echo $value ?>)" value="-"/><label class="quantite" name="quantitep"  id="quantite<?php echo($value)?>">1</label><input type="button" class="PlusMoins" onclick="Plus(<?php echo $value ?>)" value="+"/>
 <input type="submit" class="ButtonPanier" value="Ajouter au Panier"/>
 </form>
 </div>
@@ -105,14 +138,14 @@ function Plus(value){
 	if(parseInt(document.getElementById("quantite"+value).innerHTML)<9){
 	var valueplus = parseInt(document.getElementById("quantite"+value).innerHTML) + 1;
 	document.getElementById("quantite"+value).innerHTML = valueplus;
-	document.getElementById("quantiteplat").value = valueplus;
+	document.getElementById("quantiteplat"+value).value = valueplus;
 	}
 }
 function Moins(value){
 	if(parseInt(document.getElementById("quantite"+value).innerHTML)>1){
 	var valuemoins = parseInt(document.getElementById("quantite"+value).innerHTML) - 1;
 	document.getElementById("quantite"+value).innerHTML = valuemoins;
-		document.getElementById("quantiteplat").value = valueplus;
+		document.getElementById("quantiteplat"+value).value = valuemoins;
 	}
 }
 </script>

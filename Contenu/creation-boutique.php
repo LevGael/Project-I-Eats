@@ -33,7 +33,7 @@ try {
             $trigger = $dbh->prepare("CREATE OR REPLACE TRIGGER update_id_restau AFTER INSERT ON restaurant FOR EACH ROW UPDATE utilisateur SET idRestaurant=NEW.id_restau WHERE idUtilisateur=:id_utilisateur");
 			$trigger->bindParam(':id_utilisateur', $_SESSION["id_user"]);
             // TODO : Insérer l'ID du restaurant dans la table restaurateur
-            if (/*$trigger->execute() && */ $query1->execute()) {
+            if ($trigger->execute() &&  $query1->execute()) {
                 $message = "Restaurant crée avec succès";
                 $_SESSION["id_restau_user"] = $dbh->lastInsertId();
             } else {

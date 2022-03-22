@@ -104,4 +104,5 @@ position: relative;
     position: relative;
     left: 1040px;
     align-items: center;
+	z-index: 2;
 }

@@ -78,14 +78,14 @@ background-color: #CE1628;
 }
 
 .ButtonPanier{
-background-color: #CE1628;
+    background-color: #CE1628;
     width: 20%;
     height: 35px;
     border-radius: 2px;
     border: none;
-    position: absolute;
-    top: 129px;
-    left: 180px;
+    position: relative;
+      top: 30px;
+    left: 175px;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-size: 19px;
