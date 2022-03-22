@@ -40,7 +40,7 @@ try{
 <br>
 <texte1>Redirection...</texte1>
 </div>
-<?php echo "<script type='text/javascript'> document.location = '/projects/I-Eats/index.php'; </script>";?>
+<?php echo "<script type='text/javascript'> document.location = '../index.php'; </script>";?>
 		<?php
 } else {
   echo "Erreur, Impossible de créer l'enregistrement";

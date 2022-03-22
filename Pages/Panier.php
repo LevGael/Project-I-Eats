@@ -51,7 +51,7 @@ $dbh = new PDO('mysql:host=localhost;dbname=i-eats;charset=utf8' , LOGIN, MDP);
 	
     if ($prepare->execute()) {
 		?>
-<?php echo "<script type='text/javascript'> document.location = '/projects/I-Eats/Pages/Panier.php'; </script>";?>
+<?php echo "<script type='text/javascript'> document.location = '../Pages/Panier.php'; </script>";?>
 		<?php
 } else {
   echo "Erreur, Impossible de créer l'enregistrement";
@@ -72,7 +72,7 @@ $dbh = new PDO('mysql:host=localhost;dbname=i-eats;charset=utf8' , LOGIN, MDP);
 	
     if ($prepare->execute()) {
 		?>
-<?php echo "<script type='text/javascript'> document.location = '/projects/I-Eats/Pages/Panier.php'; </script>";?>
+<?php echo "<script type='text/javascript'> document.location = '../Pages/Panier.php'; </script>";?>
 		<?php
 } else {
   echo "Erreur, Impossible de créer l'enregistrement";
